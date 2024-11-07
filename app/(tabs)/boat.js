@@ -13,13 +13,15 @@ const styles = StyleSheet.create({
         marginTop: 6,
         marginBottom: 6,
         justifyContent: "space-around",
-        alignItems: "center"
+        alignItems: "center",
+        flex: 1
     },
     title: {
         fontSize: 20,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
+        flex: 1
     },
     titleBox: {
         borderWidth: 2,
@@ -31,17 +33,16 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         flex: 1
     },
-    descBox: {
+    desc: {
         borderWidth: 2,
         backgroundColor: 'whitesmoke',
         padding: 5,
-        textAlign: "center",
         marginTop: 10,
         flex: 1
     },
     image: {
         marginTop: 10,
-        maxWidth: 375,
+        width: '100%',
         alignItems: "center",
         flex: 1,
         resizeMode: 'contain'
@@ -51,10 +52,11 @@ const styles = StyleSheet.create({
 const Boat = ({title, desc, poster, icon_name}) => {
     return (
         <View style={styles.box}>
-            <Text style={[styles.title, styles.titleBox]}><Icon name={icon_name} size={20}/>{title}</Text>
-            <Text style={styles.descBox}>{desc}</Text>
+            <View style={styles.titleBox}>
+                <Text style={styles.title}><Icon name={icon_name} size={20}/>{title}</Text>
+            </View>
+            <Text style={styles.desc}>{desc}</Text>
             <Image source={poster} style={styles.image}/>
-            <Text>{'\n'}</Text>
         </View>
     );
 };

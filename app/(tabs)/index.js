@@ -1,20 +1,23 @@
 import React from 'react';
-import {Text, ScrollView, Image, View, StyleSheet} from 'react-native';
-import Icon from "react-native-vector-icons/FontAwesome6";
+import {Text, ScrollView, View, StyleSheet} from 'react-native';
 import Boat from './boat';
 
 const styles = StyleSheet.create({
     box: {
         borderWidth: 2,
         backgroundColor: 'grey',
+        marginLeft: 8,
+        marginRight: 8,
+        marginTop: 25
     }
 })
 
 const AllBoats = () => {
     return (
         <ScrollView>
-                <Text>{'\n'}</Text>
-            <Text style={[styles.box, {fontWeight: 'bold', textAlign: 'center', fontSize: 20, color: 'white' }]}>GETABOAT - FOR SALE</Text>
+            <View style={styles.box}>
+                <Text style={{fontWeight: 'bold', textAlign: 'center', fontSize: 20, color: 'white' }}>GETABOAT - FOR SALE</Text>
+            </View>
             <Boat
                 title = "SEA RAY500 SUNDANCERS"
                 desc = "Contoured lines and dramatic styling reveal a refined and powerful presence that will take your breath away."
